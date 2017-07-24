@@ -2,7 +2,7 @@
 .body {
     color: #752b58;
     font-family: 'Bad Script', cursive;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .title{
@@ -27,4 +27,12 @@
     position: relative;
     z-index: 2;
     color: lightgrey;
+}
+
+.locInput{
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    /*width: 100%;*/
+    left: 35%;
 }
