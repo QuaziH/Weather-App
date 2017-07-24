@@ -1,0 +1,29 @@
+
+.body {
+    color: #752b58;
+    font-family: 'Bad Script', cursive;
+    font-size: 25px;
+}
+
+.title{
+    font-size: 50px;
+    font-style: italic;
+    text-align: center;
+
+}
+
+.table {
+    display: table;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.errspan{
+    float: left;
+    margin-right: 6px;
+    margin-top: -20px;
+    position: relative;
+    z-index: 2;
+    color: lightgrey;}
