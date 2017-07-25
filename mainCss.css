@@ -1,14 +1,11 @@
-.body {
+.title{
     color: #752b58;
     font-family: 'Bad Script', cursive;
     font-size: 20px;
-}
-
-.title{
-    font-size: 50px;
     font-style: italic;
     text-align: center;
-
+    top:50%;
+    width:50%;
 }
 
 .table {
@@ -19,19 +16,10 @@
     table-layout: fixed;
 }
 
-.errspan{
-    float: left;
-    margin-right: 6px;
-    margin-top: -20px;
-    position: relative;
-    z-index: 2;
-    color: lightgrey;
-}
-
 .locInput{
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     position: absolute;
     top: 50%;
-    /*width: 100%;*/
-    left: 35%;
+    left: 50%;
+    margin-left:-150px;
 }
