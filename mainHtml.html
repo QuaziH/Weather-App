@@ -18,19 +18,23 @@
     <!-- Font Awesome reference-->
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
+
+
 <body>
     <div class="text-left title">
         <h1>Just Another Ordinary Weather Website.</h1>
     </div>
-    <form id="loc" class="locInput" >
+
+    <form id="loc" onsubmit="myLocationInput()" class="locInput" >
         <div>
-        <input class="  " type="text" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >
-        <input class="  " type="SUBMIT"  onclick="myLocationInput()" value="Submit">
+        <input  type="text" id="place" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >
+        <input  type="button"  onclick="myLocationInput(document.getElementById('place').value)" value="Submit">
         </div>
     </form>
 
     <!--<p id="data" ></p>-->
     <p id="result" class="weatherLoc"></p>
+    <p id="test"></p>
 
     <script src="mainJava.js"></script>
 </body>

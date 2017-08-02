@@ -18,9 +18,11 @@ if (navigator.geolocation) {
     });
 }
 
-function myLocationInput() {
-    var locationToRun = document.getElementById("loc").submit();
-    
+function myLocationInput(location) {
+
+    var locationToRun = location;
+    $('#test').text(locationToRun);
+    console.log(locationToRun);
     // var city_name =  locationToRun.substr(0,locationToRun.indexOf(' '));
     // var country_code = locationToRun.substr(locationToRun.indexOf(' ' + 1));
     // console.log(locationToRun);
