@@ -18,3 +18,9 @@ if (navigator.geolocation) {
     });
 }
 
+function myLocationInput() {
+    var locationToRun = document.getElementById("loc").submit();
+
+
+}
+

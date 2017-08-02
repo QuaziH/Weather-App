@@ -23,3 +23,9 @@
     left: 50%;
     margin-left:-150px;
 }
+.weatherLoc{
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    font-size: 50px;
+}
