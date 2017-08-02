@@ -25,16 +25,17 @@
         <h1>Just Another Ordinary Weather Website.</h1>
     </div>
 
-    <form id="loc" onsubmit="myLocationInput()" class="locInput" >
+    <form id="loc" class="locInput" >
         <div>
-        <input  type="text" id="place" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >
-        <input  type="button"  onclick="myLocationInput(document.getElementById('place').value)" value="Submit">
+        <input  type="text" id="place" onsubmit="myLocationInput(document.getElementById('place').value);ClearFields()" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >
+        <input  type="button"  onclick="myLocationInput(document.getElementById('place').value) ; ClearFields()" value="Submit">
+        <input type="button" onclick="myLocation()" value="Current Location";>
         </div>
     </form>
 
-    <!--<p id="data" ></p>-->
+
     <p id="result" class="weatherLoc"></p>
-    <p id="test"></p>
+
 
     <script src="mainJava.js"></script>
 </body>
