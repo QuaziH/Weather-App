@@ -26,13 +26,16 @@
     </div>
 
     <form id="loc" class="locInput" >
-        <div>
         <input  type="text" id="place" onsubmit="myLocationInput(document.getElementById('place').value);ClearFields()" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >
         <input  type="button"  onclick="myLocationInput(document.getElementById('place').value) ; ClearFields()" value="Submit">
         <input type="button" onclick="myLocation()" value="Current Location";>
-        </div>
     </form>
 
+    <!--<form id="loc" onsubmit="myLocationInput(document.getElementById('place').value)" class="locInput" >-->
+        <!--<input type="text" id="place" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >-->
+        <!--<input type="submit" value="Submit">-->
+        <!--<input type="button" onclick="myLocation()" value="Current Location";>-->
+    <!--</form>-->
 
     <p id="result" class="weatherLoc"></p>
 
