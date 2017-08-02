@@ -21,7 +21,6 @@
 function myLocationInput(location) {
     var city_name =  location.substr(0,location.indexOf(' '));
     var country_code = location.substr(location.indexOf(' ' + 1));
-    console.log(location);
     var api_url = 'http://api.openweathermap.org/data/2.5/weather?q='+ city_name + country_code +'&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
 
     $.ajax({
