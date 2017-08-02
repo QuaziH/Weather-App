@@ -19,11 +19,10 @@
 // }
 
 function myLocationInput(location) {
-    // var locationToRun = location;
-    // var city_name =  locationToRun.substr(0,locationToRun.indexOf(' '));
-    // var country_code = locationToRun.substr(locationToRun.indexOf(' ' + 1));
+    var city_name =  location.substr(0,location.indexOf(' '));
+    var country_code = location.substr(location.indexOf(' ' + 1));
     console.log(location);
-    var api_url = 'http://api.openweathermap.org/data/2.5/weather?zip='+ location +'&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
+    var api_url = 'http://api.openweathermap.org/data/2.5/weather?q='+ city_name + country_code +'&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
 
     $.ajax({
         url: api_url,
