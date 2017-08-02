@@ -11,7 +11,7 @@
 //                 var location = data.name;
 //                 var desc = data.weather.description;
 //
-//                 // $('#result').text(tempr + '° '  + location);
+//                 $('#result').text(tempr + '° '  + location);
 //
 //             }
 //         });
@@ -19,9 +19,8 @@
 // }
 
 function myLocationInput(location) {
-    var city_name =  location.substr(0,location.indexOf(' '));
-    var country_code = location.substr(location.indexOf(' ' + 1));
-    var api_url = 'http://api.openweathermap.org/data/2.5/weather?q='+ city_name + country_code +'&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
+    // var city_name =  location.substr(0,location.indexOf(' '));
+    var api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
 
     $.ajax({
         url: api_url,
@@ -32,8 +31,10 @@ function myLocationInput(location) {
             var location = data.name;
             var desc = data.weather.description;
 
-            $('#result').text(tempr + '° ' + location);
+            $('#result').text(tempr + '° ' + location + ' ' + desc);
         }
     });
 }
+
+
 
