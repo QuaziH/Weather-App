@@ -1,6 +1,6 @@
-var myTempr;
-var myArea;
-var myDesc;
+var currentTemp;
+var currentArea;
+var currentDesc;
 
 if (navigator.geolocation) {
     var api_url;
@@ -10,9 +10,9 @@ if (navigator.geolocation) {
             url : api_url,
             method : 'GET',
             success : function (data) {
-                 myTempr = data.main.temp;
-                 myArea = data.name;
-                 myDesc = data.weather.description;
+                 currentTemp = data.main.temp;
+                 currentArea = data.name;
+                 currentDesc = data.weather[0].description;
 
                  // $('#result').text(tempr + '° '  + location);
             }
@@ -23,12 +23,13 @@ if (navigator.geolocation) {
 }
 
 function myLocation(){
-    $('#result').text(myTempr + '° '  + myArea);
+    $('#result').text(currentTemp + '° '  + currentArea + ' ' + currentDesc);
 }
 
 function myLocationInput(location) {
-    if (isNaN(location) == false) {
+    if (!isNaN(location)) {
         var api_url = 'http://api.openweathermap.org/data/2.5/weather?zip=' + location + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
+
         $.ajax({
             url: api_url,
             method: 'GET',
@@ -36,10 +37,9 @@ function myLocationInput(location) {
             success: function (data) {
                 var tempr = data.main.temp;
                 var location = data.name;
-                var desc = data.weather.description;
+                var desc = data.weather[0].description;
 
-                $('#result').text(tempr + '° ' + location);
-
+                $('#result').text(tempr + '° ' + location + ' ' + desc);
             }
         });
     }
@@ -47,7 +47,7 @@ function myLocationInput(location) {
         var city_name = location.substr(0, location.indexOf(','));
         var country_code = location.substr(location.indexOf(',' + 1));
 
-        var api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city_name + ',' + country_code + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
+        api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city_name + ',' + country_code + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
 
         $.ajax({
             url: api_url,
@@ -56,15 +56,14 @@ function myLocationInput(location) {
             success: function (data) {
                 var tempr = data.main.temp;
                 var location = data.name;
-                var desc = data.weather.description;
+                var desc = data.weather[0].description;
 
-                $('#result').text(tempr + '° ' + location);
-
+                $('#result').text(tempr + '° ' + location + ' ' + desc);
             }
         });
     }
     else {
-        var api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
+        api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
 
         $.ajax({
             url: api_url,
@@ -73,16 +72,15 @@ function myLocationInput(location) {
             success: function (data) {
                 var tempr = data.main.temp;
                 var location = data.name;
-                var desc = data.weather.description;
+                var desc = data.weather[0].description;
 
-                $('#result').text(tempr + '° ' + location);
+                $('#result').text(tempr + '° ' + location + ' ' + desc);
             }
         });
     }
 }
 
-function ClearFields() {
+function clearFields() {
     document.getElementById("place").value = "";
 }
-
 
