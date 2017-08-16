@@ -1,6 +1,7 @@
 var myTempr;
 var myArea;
 var myDesc;
+var myTest;
 
 if (navigator.geolocation) {
     var api_url;
@@ -13,7 +14,8 @@ if (navigator.geolocation) {
                  myTempr = data.main.temp;
                  myArea = data.name;
                  myDesc = data.weather.description;
-
+                 myTest = data.weather.icon;
+                 console.log(myTest);
                  // $('#result').text(tempr + '° '  + location);
             }
         });
@@ -21,7 +23,7 @@ if (navigator.geolocation) {
 } else {
     $('#result').text("Your browser does not support geolocation.");
 }
-
+  
 function myLocation(){
     $('#result').text(myTempr + '° '  + myArea);
 }
