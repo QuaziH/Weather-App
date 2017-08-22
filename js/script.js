@@ -44,7 +44,7 @@ function myLocationInput(location) {
                 var main = data.weather[0].main;
                 var icon_url = data.weather[0].icon;
 
-                $('#result').text(tempr + '° ');
+                $('#weather').text(tempr + '° ');
                 $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
                 $('#location').text(location);
             }
