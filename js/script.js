@@ -23,7 +23,7 @@ if (navigator.geolocation) {
                  myDesc = data.weather.description;
                  myTest = data.weather.icon;
                  console.log(myTest);
-                 
+
                  currentTemp = data.main.temp;
                  currentArea = data.name;
                  currentDesc = data.weather[0].description;
@@ -71,9 +71,15 @@ function myLocationInput(location) {
             success: function (data) {
                 var tempr = data.main.temp;
                 var location = data.name;
-                var desc = data.weather[0].description;
+                var desc = data.weather[0].main;
+
+                icon_url = "http://openweathermap.org/img/w/" + data.weather.icon + ".png"
+
+
+
 
                 $('#result').text(tempr + '° ' + location + ' ' + desc);
+                $('#icon').html(icon_url);
             }
         });
     }
