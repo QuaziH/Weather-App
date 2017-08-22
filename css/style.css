@@ -24,24 +24,32 @@
     margin-left:-150px;
 }
 
-.resultLoc{
+.result{
+    text-align: center;
     position: absolute;
     top: 30%;
     left: 47.5%;
     font-size: 50px;
 }
 
-.iconLoc{
+.icon{
     position: absolute;
     top: 33.5%;
     right: 36.5%;
-
 }
-.descLoc{
+
+.location{
+    text-align: center;
     position: absolute;
     top:38%;
-     width: 100%;
-    left: 45%;
+    width: 100%;
+    /*left: 45%;*/
     font-size: 40px;
 
 }
+
+/*text-align: center;*/
+/*color: #FFF8D2;*/
+/*position: absolute;*/
+/*top: 50%;*/
+/*width: 100%;*/
