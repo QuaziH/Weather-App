@@ -1,8 +1,7 @@
-
 var myTempr;
 var myArea;
 var myDesc;
-var myTest;
+var myIcon;
 
 var currentTemp;
 var currentArea;
@@ -18,18 +17,17 @@ if (navigator.geolocation) {
             method : 'GET',
             success : function (data) {
 
-                 myTempr = data.main.temp;
-                 myArea = data.name;
-                 myDesc = data.weather.description;
-                 myTest = data.weather.icon;
-                 console.log(myTest);
+                myTempr = data.main.temp;
+                myArea = data.name;
+                myDesc = data.weather.description;
+                myIcon = data.weather.icon;
 
-                 currentTemp = data.main.temp;
-                 currentArea = data.name;
-                 currentDesc = data.weather[0].description;
+                currentTemp = data.main.temp;
+                currentArea = data.name;
+                currentDesc = data.weather[0].description;
+                currentIcon = data.weather.icon;
 
-
-                 // $('#result').text(tempr + '° '  + location);
+                // $('#result').text(tempr + '° '  + location);
             }
         });
     });
@@ -53,8 +51,11 @@ function myLocationInput(location) {
                 var tempr = data.main.temp;
                 var location = data.name;
                 var desc = data.weather[0].description;
+                var icon_url = data.weather[0].icon;
 
-                $('#result').text(tempr + '° ' + location + ' ' + desc);
+                $('#result').text(tempr + '° ' + location + ' ' + desc );
+                $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+
             }
         });
     }
@@ -63,6 +64,7 @@ function myLocationInput(location) {
         var country_code = location.substr(location.indexOf(',' + 1));
 
         api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city_name + ',' + country_code + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
+        icon_url = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
 
         $.ajax({
             url: api_url,
@@ -72,10 +74,6 @@ function myLocationInput(location) {
                 var tempr = data.main.temp;
                 var location = data.name;
                 var desc = data.weather[0].main;
-
-                icon_url = "http://openweathermap.org/img/w/" + data.weather.icon + ".png"
-
-
 
 
                 $('#result').text(tempr + '° ' + location + ' ' + desc);
