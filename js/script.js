@@ -15,7 +15,7 @@ if (navigator.geolocation) {
                 currentTemp = data.main.temp;
                 currentArea = data.name;
                 currentDesc = data.weather[0].description;
-                currentIcon = data.weather[0].icon;
+                currentIcon = data.weather.icon;
 
                 // $('#result').text(tempr + '° '  + location);
             }
@@ -26,8 +26,9 @@ if (navigator.geolocation) {
 }
   
 function myLocation(){
-    $('#result').text(currentTemp + '° '  + currentArea);
-    $('#icon').attr("src",'http://openweathermap.org/img/w/' + currentIcon + '.png');
+    $('#result').text(tempr + '° ');
+    $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+    $('#desc').text(location);
 }
 
 function myLocationInput(location) {
@@ -44,10 +45,11 @@ function myLocationInput(location) {
                 var desc = data.weather[0].description;
                 var icon_url = data.weather[0].icon;
 
-                $('#result').text(tempr + '° ' + location);
+                $('#result').text(tempr + '° ');
                 $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
-
+                $('#desc').text(location);
             }
+
         });
     }
     else if (location.indexOf(',') > -1) {
@@ -66,8 +68,9 @@ function myLocationInput(location) {
                 var desc = data.weather[0].main;
                 var icon_url = data.weather[0].icon;
 
-                $('#result').text(tempr + '° ' + location);
+                $('#result').text(tempr + '° ');
                 $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+                $('#desc').text(location);
             }
         });
     }
@@ -84,8 +87,9 @@ function myLocationInput(location) {
                 var desc = data.weather[0].description;
                 var icon_url = data.weather[0].icon;
 
-                $('#result').text(tempr + '° ' + location);
+                $('#result').text(tempr + '° ');
                 $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+                $('#desc').text(location);
             }
         });
     }
