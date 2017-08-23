@@ -22,21 +22,25 @@
         <h1>Just Another Ordinary Weather Website.</h1>
     </div>
 
-    <form id="loc" onsubmit="myLocationInput(document.getElementById('place').value); clearFields()" class="locInput" >
-        <input type="text" id="place" placeholder="Location &#xf041" style="font-family: Arial,FontAwesome; font-size: 20px" >
-        <input type="button" onclick="myLocationInput(document.getElementById('place').value); clearFields()" value="Submit">
-        <input type="button" onclick="myLocation()" value="Current Location";>
-    </form>
+    <h3 id="weather" class="result" ></h3>
+    <img id="icon" class="icon"  src="">
+    <h2 id="location" class="location" ></h2>
+
+    <!--<form id="loc" onsubmit="myLocationInput(document.getElementById('place').value); clearFields()" class="locInput" >-->
+    <div class="locInput input-group col-xs-3" id="loc">
+        <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+        <input class="form-control" type="text" id="place" placeholder="Location">
+    </div>
+    <input class="btn btn-info submit" type="button" onclick="myLocationInput(document.getElementById('place').value); clearFields()" value="Submit">
+    <input class="btn btn-info currLoc" type="button" onclick="myLocation()" value="Current Location";>
+    <!--</form>-->
+
 
     <!--<form id="loc" onsubmit="myLocationInput(document.getElementById('place').value)" class="locInput" >-->
         <!--<input type="text" id="place" placeholder="Location &#xf041 " style="font-family: Arial,FontAwesome; font-size: 20px" >-->
         <!--<input type="submit" value="Submit">-->
         <!--<input type="button" onclick="myLocation()" value="Current Location";>-->
     <!--</form>-->
-
-    <h3 id="weather" class="result" ></h3>
-    <img id="icon" class="icon"  src="">
-    <h2 id="location" class="location" ></h2>
 
     <script src="js/script.js"></script>
 </body>
