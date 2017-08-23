@@ -3,27 +3,31 @@ var currentArea;
 var currentMain;
 var currentIcon;
 
-function myLocation(){
+if(navigator.geolocation) {
     var api_url;
     navigator.geolocation.getCurrentPosition(function(position) {
         api_url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&units=imperial&appid=652d6f41ad0cb28b749ec584af19bddd';
 
         $.ajax({
-            url : api_url,
-            method : 'GET',
+            url: api_url,
+            method: 'GET',
 
-            success : function (data) {
+            success: function (data) {
                 currentTemp = data.main.temp;
                 currentArea = data.name;
                 currentMain = data.weather[0].main;
                 currentIcon = data.weather[0].icon;
-
-                $('#weather').text(currentTemp + '° ');
-                $('#icon').attr("src",'http://openweathermap.org/img/w/' + currentIcon + '.png');
-                $('#location').text(currentArea);
             }
         });
     });
+} else {
+    $('.result').text("Your browser does not support geolocation.");
+}
+
+function myLocation(){
+    $('#weather').text(currentTemp + '° ');
+    $('#icon').attr("src",'http://openweathermap.org/img/w/' + currentIcon + '.png');
+    $('#location').text(currentArea);
 }
 
 function myLocationInput(location) {
