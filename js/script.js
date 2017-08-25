@@ -26,7 +26,7 @@ if(navigator.geolocation) {
 
 function myLocation(){
     $('#weather').text(currentTemp + '° ');
-    $('#icon').attr("src",'http://openweathermap.org/img/w/' + currentIcon + '.png');
+    // $('#icon').attr("src",'http://openweathermap.org/img/w/' + currentIcon + '.png');
     $('#location').text(currentArea);
 }
 
@@ -45,7 +45,7 @@ function myLocationInput(location) {
                 var icon_url = data.weather[0].icon;
 
                 $('#weather').text(tempr + '° ');
-                $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+                // $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
                 $('#location').text(location);
             }
 
@@ -68,7 +68,7 @@ function myLocationInput(location) {
                 var icon_url = data.weather[0].icon;
 
                 $('#weather').text(tempr + '° ');
-                $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+                // $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
                 $('#location').text(location);
             }
         });
@@ -87,7 +87,7 @@ function myLocationInput(location) {
                 var icon_url = data.weather[0].icon;
 
                 $('#weather').text(tempr + '° ');
-                $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
+                // $('#icon').attr("src",'http://openweathermap.org/img/w/' + icon_url + '.png');
                 $('#location').text(location);
             }
         });
